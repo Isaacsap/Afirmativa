@@ -1,0 +1,597 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    font-family: 'Roboto' -apple-system, Helvetica, Arial, sans-serif;
+    background: rgb(255, 255, 255);
+  }
+  a {
+    text-decoration: none;
+    transition: 0.3s;
+    color: #181717;
+  }
+  
+  a:hover {
+    opacity: 0.7;
+  }
+  
+  .logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+  .logo-ft{
+    width: 290px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Roboto', -apple-system, Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    background: #f1f1f1e7;
+    height: 8vh;
+  }
+  
+  main {
+    background-size: cover;
+    height: 92vh;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+  }
+  
+  .mobile-menu {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #ffffff;
+    margin: 8px;
+    transition: 0.3s;
+  }
+  .subheader img{
+    width: 100%;
+    height: 30px;
+  }
+  @media (max-width: 999px) {
+    body {
+      overflow-x: hidden;
+    }
+    .nav-list {
+      position: absolute;
+      top: 8vh;
+      right: 0;
+      width: 50vw;
+      height: 92vh;
+      background: #f8f8f8;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+    }
+    .nav-list li {
+      margin-left: 0;
+      opacity: 0;
+    }
+    .mobile-menu {
+      display: block;
+    }
+  }
+  
+  .nav-list.active {
+    transform: translateX(0);
+  }
+  
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+  }
+  
+  .mobile-menu.active .line2 {
+    opacity: 0;
+  }
+  
+  .mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
+  /* FIM DA NAVBAR */
+
+
+  /*ASIDE */
+  aside{
+    width: 100%;
+}
+
+aside .title{
+    display: block;
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+aside .box{
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+aside .box.-box-img img{
+    display: block;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 0.5em solid #000;
+    margin: 0 auto;
+}
+
+aside .box.-box-img p{
+    text-align: center;
+    font-size: 1em;
+    line-height: 2em;
+    margin: 1em 0 0 0;
+}
+
+aside .box.-box-tag .tags{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+}
+
+aside .box.-box-tag .tags li{
+    float: left;
+}
+
+aside .box.-box-tag .tags li a{
+    display: block;
+    background-color: #000;
+    color:#fff;
+    padding: 10px 15px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    margin: 5px 5px 5px 0;
+    text-decoration: none;
+    transition: ease .4s;
+}
+ 
+aside .box.-box-tag .tags li a:hover{
+    opacity: .8;
+}
+
+/* fim do ASIDE */
+
+/* INICIO DOS CARDS */
+
+.card{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card.-cats .link{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.card.-cats figure{
+    margin: 0;
+}
+
+.card.-cats figure::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    z-index: 1;
+}
+
+.card.-cats figcaption{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: #fff;
+    z-index: 5;
+    transition: ease .3s;
+}
+
+.card.-cats img{
+    width: 100%;
+    transition: ease .5s;
+}
+
+.card.-cats:hover img{
+    transform: scale(1.5) rotate(5deg);
+}
+
+.card.-cats:hover figcaption{
+    transform: scale(1.15);
+}
+
+.card.-post{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 0;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+
+.card.-post .link{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.card.-post .box-img{
+    width: 35%;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.card.-post .box-img img{
+    width: 100%;
+    border-radius: 4px;
+    transition: ease .5s;
+}
+
+.card.-post:hover img{
+    transform: scale(1.5) rotate(5deg);
+}
+
+.card.-post .box-content{
+    width: 65%;
+    padding: 1em 2em;
+}
+
+.card.-post .box-content h4{
+    margin: 0 0 1em 0;
+}
+
+.card.-post .box-content p{
+    margin: 0;
+    color: rgba(0,0,0,.5)
+}
+
+@media (max-width: 991.98px) {
+    .card.-cats{
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .card.-cats{
+        height: 200px;
+    } 
+
+    .card.-post{
+        display: block;
+    }
+
+    .card.-post .box-img,
+    .card.-post .box-content
+    {
+        width: 100%;
+        padding: 0;
+    }
+    .card.-post .box-content{
+        margin-top: 1em;
+    }
+}
+
+
+
+/* FIM DO DESIGN DE CARDS */
+
+
+  /*FOOTER */
+  footer{
+    width: 100%;
+    margin-top: 50px;
+  }
+  .barra img{
+    width: 100%;
+    height: 20px;
+  }
+  .rodape{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .logo-rodape img{
+    width: 350px;
+    
+  }
+  .infos{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .CNPJ a{
+    display: flex;
+    color: #070707;
+    font-family: 'Popins';
+    font-size: 20px;
+  }
+  .contato a{
+    color: #070707;
+    font-family: 'Roboto';
+    font-size: 20px;
+  }
+  .email a{
+    color: #070707;
+    font-family: 'Roboto';
+    font-size: 20px;
+  }
+  
+  @media (min-width: 360px) {
+    footer{
+      width: 100%;
+      margin-top: 2550px;
+    }
+    .logo-rodape img{
+      width: 200px;
+    }
+    .infos{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .CNPJ a{
+      display: flex;
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 12px;
+    }
+    .contato a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 12px;
+    }
+    .email a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 12px;
+    }
+  }
+  @media (min-width: 390px) {
+    footer{
+      width: 100%;
+      margin-top: 2250px;
+    }
+    .logo-rodape img{
+      width: 200px;
+    }
+    .infos{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .CNPJ a{
+      display: flex;
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 12px;
+    }
+    .contato a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 12px;
+    }
+    .email a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 12px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    footer{
+      width: 100%;
+      margin-top: 1200px;
+    }
+    .logo-rodape img{
+      width: 300px;
+    }
+    .infos{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .CNPJ a{
+      display: flex;
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 15px;
+    }
+    .contato a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 15px;
+    }
+    .email a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 15px;
+    }
+  }
+  @media (min-width: 820px) {
+    footer{
+      width: 100%;
+    }
+    .logo-rodape img{
+      width: 350px;
+    }
+    .infos{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .CNPJ a{
+      display: flex;
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 16px;
+    }
+    .contato a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 16px;
+    }
+    .email a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 16px;
+    }
+  }
+  @media (min-width: 990px) {
+    footer{
+      width: 100%;
+      margin-top: 400px;
+    }
+    .logo-rodape img{
+      width: 450px;
+    }
+    .infos{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .CNPJ a{
+      display: flex;
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 20px;
+    }
+    .contato a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 20px;
+    }
+    .email a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 20px;
+    }
+  }
+  
+  /* SOCIAL MEDIA */
+  .f-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .social-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid darkgreen;
+    border-radius: 50%;
+    font-size: 20px;
+    color: darkgreen;
+     text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: .5s ease;
+    /* opacity: 0;  */
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+  
+  }
+  
+  .social-media a:hover{
+    background: rgb(255, 255, 87);
+    color: darkgreen;
+    box-shadow: 0 0 20px rgb(255, 255, 87);
+  }
+
+  /* Reset do blog */
+
+  .title{
+    font-family: 'Vidaloka', serif;
+}
+
+.title.-border{
+    border-bottom: 5px solid #000;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+
+section.section{
+    padding: 80px 0;
+}
+
+.card{
+    border: 1px solid rgba(0,0,0,.08);
+}
+
+.load{
+    background-color: darkgreen;
+    color: #fff;
+    display: block;
+    padding: 1em 2em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    transition: ease .4s;
+}
+
+.load:hover{
+    color: #fff;
+    opacity: .8;
+}

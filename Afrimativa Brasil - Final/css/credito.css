@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    font-family: 'Roboto' -apple-system, Helvetica, Arial, sans-serif;
+    background: rgb(255, 255, 255);
+  }
+  a {
+    text-decoration: none;
+    transition: 0.3s;
+    color: #181717;
+  }
+  
+  a:hover {
+    opacity: 0.7;
+  }
+  
+  .logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+  .logo-ft{
+    width: 290px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Roboto', -apple-system, Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    background: #f1f1f1e7;
+    height: 8vh;
+  }
+  
+  main {
+    background-size: cover;
+    height: 92vh;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+  }
+  
+  .mobile-menu {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #ffffff;
+    margin: 8px;
+    transition: 0.3s;
+  }
+  .subheader img{
+    width: 100%;
+    height: 30px;
+  }
+  @media (max-width: 999px) {
+    body {
+      overflow-x: hidden;
+    }
+    .nav-list {
+      position: absolute;
+      top: 8vh;
+      right: 0;
+      width: 50vw;
+      height: 92vh;
+      background: #f8f8f8;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+    }
+    .nav-list li {
+      margin-left: 0;
+      opacity: 0;
+    }
+    .mobile-menu {
+      display: block;
+    }
+  }
+  
+  .nav-list.active {
+    transform: translateX(0);
+  }
+  
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+  }
+  
+  .mobile-menu.active .line2 {
+    opacity: 0;
+  }
+  
+  .mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
+  /* FIM DA NAVBAR */
+
+  .barra img{
+    width: 100%;
+    height: 20px;
+  }
+
+  #principal{
+    background-color: #cececee7;
+  }
+
+
+
+  /* FOOTER */
+
+
+footer{
+    width: 100%;
+  }
+  .barra img{
+    width: 100%;
+    height: 20px;
+  }
+  .rodape{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .logo-rodape img{
+    width: 350px;
+    
+  }
+  .infos{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .CNPJ a{
+    display: flex;
+    color: #070707;
+    font-family: 'Popins';
+    font-size: 20px;
+  }
+  .contato a{
+    color: #070707;
+    font-family: 'Roboto';
+    font-size: 20px;
+  }
+  .email a{
+    color: #070707;
+    font-family: 'Roboto';
+    font-size: 20px;
+  }
+  
+  @media (min-width: 375px) {
+    footer{
+      width: 100%;
+    }
+    .logo-rodape img{
+      width: 200px;
+    }
+    .infos{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .CNPJ a{
+      display: flex;
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 12px;
+    }
+    .contato a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 12px;
+    }
+    .email a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 12px;
+    }
+  }
+  @media (min-width: 390px) {
+    footer{
+      width: 100%;
+    }
+    .logo-rodape img{
+      width: 200px;
+    }
+    .infos{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .CNPJ a{
+      display: flex;
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 12px;
+    }
+    .contato a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 12px;
+    }
+    .email a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 12px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    footer{
+      width: 100%;
+    }
+    .logo-rodape img{
+      width: 300px;
+    }
+    .infos{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .CNPJ a{
+      display: flex;
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 15px;
+    }
+    .contato a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 15px;
+    }
+    .email a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 15px;
+    }
+  }
+  @media (min-width: 820px) {
+    footer{
+      width: 100%;
+    }
+    .logo-rodape img{
+      width: 350px;
+    }
+    .infos{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .CNPJ a{
+      display: flex;
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 16px;
+    }
+    .contato a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 16px;
+    }
+    .email a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 16px;
+    }
+  }
+  @media (min-width: 1220px) {
+    footer{
+      width: 100%;
+    }
+    .logo-rodape img{
+      width: 450px;
+    }
+    .infos{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .CNPJ a{
+      display: flex;
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 20px;
+    }
+    .contato a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 20px;
+    }
+    .email a{
+      color: #070707;
+      font-family: 'Roboto';
+      font-size: 20px;
+    }
+  }
+
+  /* SOCIAL MEDIA */
+.f-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.social-media a{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid darkgreen;
+  border-radius: 50%;
+  font-size: 20px;
+  color: darkgreen;
+   text-decoration: none;
+  margin: 30px 15px 30px 0;
+  transition: .5s ease;
+  /* opacity: 0;  */
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+
+}
+
+.social-media a:hover{
+  background: rgb(255, 255, 87);
+  color: darkgreen;
+  box-shadow: 0 0 20px rgb(255, 255, 87);
+}
